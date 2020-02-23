@@ -1,0 +1,81 @@
+import java.util.Scanner;
+import java.util.Scanner;
+import java.util.Random;
+import java.util.Random;
+import java.util.Random;
+import java.util.Random;
+public class game {
+
+public static void main(String[] args) {
+Scanner flbjb= new Scanner(System.in);
+System.out.println("Welcome to Flbjb Quest!");
+System.out.println("you may pick between 3 classes: Warrior, Mage, and Rogue");
+System.out.println("Pick a class: W for Warrior, M for Mage and R for Rogue");
+String playerclass= flbjb.nextLine();
+switch (playerclass)        {
+case "w": System.out.println("you are now a warrior!"); break;
+case "m": System.out.println("you are now a mage!"); break;
+case "r": System.out.println("you are now a rogue!"); break;
+default: System.out.println("please select a class"); break; }
+int enemy= 15;
+
+System.out.println("Oh no! A Wild hytnfntchkmn Appeared! Enemy HP:" +enemy );
+System.out.println("you have 15 health and 10 mana");
+
+
+int hp= 15;
+int mana= 10;
+Scanner num= new Scanner(System.in);
+Scanner hytn= new Scanner(System.in);
+
+do {
+Random rand= new Random();
+int damage= rand.nextInt(5);
+damage += 1;
+Random rand2= new Random();
+int spelldps= rand.nextInt(10);
+spelldps +=1;
+Random rand3= new Random();
+int enemydps= rand.nextInt(5);
+enemydps +=1;
+System.out.println("what will you do? A for Attack, S for Spell");
+String input;
+input=hytn.nextLine();
+String a="a";
+String s="s";
+if (input.equals(a)) {  enemy= enemy - damage;
+System.out.println("damage done:"+damage);
+System.out.println("enemy hp left:"+enemy);
+}
+else if (input.equals(s)) {  enemy= enemy- spelldps;
+mana = mana-2;
+System.out.println("damage done:" +spelldps );
+System.out.println("enemy hp left:"+enemy);
+System.out.println("mana left:" +mana);
+}
+
+hp = hp-enemydps;
+System.out.println("Damage taken from monster:" +enemydps);
+System.out.println("hp left:"+hp);
+
+
+} while (enemy>0 & hp>0 );
+
+
+if (hp<=0 | (hp<=0 & enemy<=0)) {
+System.out.println("Game Over");
+}
+if (enemy<=0 & hp>0) {
+System.out.println("You Win!");
+
+}
+
+
+
+
+
+
+
+}
+
+}
